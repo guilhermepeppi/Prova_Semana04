@@ -1,3 +1,5 @@
+using System;
+
 namespace Prova_Semana04;
 
 public class Biblioteca
@@ -12,9 +14,29 @@ public class Biblioteca
     //CadastrarPessoa(Pessoa) - Deverá incluir uma pessoa na lista Pessoas do objeto Biblioteca;
     //CadastrarLivro(Livro) - Deverá incluir um livro na lista de Livros do objeto Biblioteca;
     //EmprestarLivroBiblioteca(int idLivro, int idPessoa) - Deverá chamar o método EmprestarLivro do objeto Livro
-        //e Adicionar um Livro na lista LivrosEmprestados do objeto Pessoa através do método AdicionarLivroLista;
+        // e Adicionar um Livro na lista LivrosEmprestados do objeto Pessoa através do método AdicionarLivroLista;
     //DevolverLivroBiblioteca(int idLivro, int idPessoa) - Deverá chamar o método DevolverLivro do
-        //objeto Livro e Remover um Livro na lista LivrosEmprestados do objeto Pessoa através
-        //do método RemoverLivroLista;
+        // objeto Livro e Remover um Livro na lista LivrosEmprestados do objeto Pessoa através
+        // do método RemoverLivroLista;
+        
+        public void CadastrarPessoa(int Pessoa)
+        {
+            Pessoas.Add(new Pessoa());
 
+        }
+        
+        public void CadastrarLivro(int Livro)
+        {
+            Livros.Add(new Livros());
+        }
+
+        public int mprestarLivroBiblioteca(int idLivro, int idPessoa)
+        {
+            return 0;
+        }
+
+        public int DevolverLivroBiblioteca(int idLivro, int idPessoa)
+        {
+            return 0;
+        }
 }
