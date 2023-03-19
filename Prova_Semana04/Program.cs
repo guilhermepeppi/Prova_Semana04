@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace Prova_Semana04 
 {
@@ -25,57 +27,12 @@ namespace Prova_Semana04
                 switch (menu)
                 {
                     case 1:
-                        Pessoa pessoa = new Pessoa();
-
-                        Console.WriteLine("Digite o ID: ");
-                        Console.ReadLine();
                         
-                        foreach (var identificacao in pessoa.Id)
-                        {
-                            if (identificacao == pessoa.Id)
-                            {
-                                pessoa.Id = int.Parse(Console.ReadLine());
-                            }
-                            else
-                            {
-                               Console.WriteLine("Pessoa já cadastrada");
-                               retornarMenu = true;
-                            }
-                        }
-
-                        Console.WriteLine("Digite o Nome: ");
-                        pessoa.Nome = Console.ReadLine();
-
-                        Console.WriteLine("Digite o CPF: ");
-                        pessoa.Cpf = Console.ReadLine();
-
-                        Console.WriteLine("Digite o telefone: ");
-                        pessoa.Telefone = Console.ReadLine();
-
-                        Console.WriteLine("Digite o ID: ");
-                        pessoa.Id = int.Parse(Console.ReadLine());
-
                         retornarMenu = true;
                         
                         break;
 
                     case 2:
-                        Livros livro = new Livros();
-
-                        Console.WriteLine("Digite o ID: ");
-                        livro.Id = int.Parse(Console.ReadLine());
-
-                        Console.WriteLine("Digite o Título: ");
-                        livro.Titulo = Console.ReadLine();
-
-                        Console.WriteLine("Digite o autor: ");
-                        livro.Autor = Console.ReadLine();
-
-                        Console.WriteLine("Digite a editora: ");
-                        livro.Editora = Console.ReadLine();
-
-                        Console.WriteLine("Digite a quantidade de exemplares: ");
-                        livro.QuantidadeExemplares = int.Parse(Console.ReadLine());
 
                         retornarMenu = true;
                         
