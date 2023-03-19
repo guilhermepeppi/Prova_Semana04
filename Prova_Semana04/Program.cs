@@ -1,74 +1,76 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿namespace Prova_Semana04;
 
-namespace Prova_Semana04 
+internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
+        Console.WriteLine("Digite a opção desejada: ");
+        Console.WriteLine("1 - Cadastrar Pessoa " +
+                          "2 - Cadastrar Livro" +
+                          "3 - Emprestar Livro" +
+                          "4 - Devolver Livro" +
+                          "5 - Listar todos os livros" +
+                          "6 - Listar todas as pessoas cadastradas" +
+                          "7 - Listar todos os livros emprestados");
 
-            Console.WriteLine("Digite a opção desejada: ");
-            Console.WriteLine("1 - Cadastrar Pessoa " +
-                              "2 - Cadastrar Livro" +
-                              "3 - Emprestar Livro" +
-                              "4 - Devolver Livro" +
-                              "5 - Listar todos os livros" +
-                              "6 - Listar todas as pessoas cadastradas" +
-                              "7 - Listar todos os livros emprestados");
-            
-            int menu = int.Parse(Console.ReadLine()!);
+        var menu = int.Parse(Console.ReadLine()!);
 
-            bool retornarMenu = false; //Usado para voltar ao menu, já que o Switch não fornece essa opção por padrão
-            
-            while (!retornarMenu)
+        var retornarMenu = false; //Usado para voltar ao menu, já que o Switch não fornece essa opção por padrão
+
+        while (!retornarMenu)
+            switch (menu)
             {
-                switch (menu)
-                {
-                    case 1:
-                        
-                        retornarMenu = true;
-                        
-                        break;
+                case 1:
+                    //Cadastrar Pessoa
+                    retornarMenu = true;
+                    break;
 
-                    case 2:
+                case 2:
+                    //Cadastrar Livro
+                    retornarMenu = true;
+                    break;
 
-                        retornarMenu = true;
-                        
-                        break;
+                case 3:
+                    //Emprestar Livro
+                    retornarMenu = true;
+                    break;
 
-                    case 3:
-                        //Emprestar Livro
-                        retornarMenu = true;
-                        break;
+                case 4:
+                    //Devolver Livro
+                    retornarMenu = true;
+                    break;
 
-                    case 4:
-                        //Devolver Livro
-                        retornarMenu = true;
-                        break;
+                case 5:
+                    //Listar todos os livros
+                    Livros livros = new Livros();
 
-                    case 5:
-                        //Listar todos os livros
-                        retornarMenu = true;
-                        break;
+                    foreach (char nomeLivro in livros.Titulo)
+                    {
+                        Console.WriteLine(nomeLivro.ToString());
+                    }
+                    retornarMenu = true;
+                    break;
 
-                    case 6:
-                        //Listar todas as pessoas cadastradas
-                        retornarMenu = true;
-                        break;
+                case 6:
+                    //Listar todas as pessoas cadastradas
+                    Pessoa pessoa = new Pessoa();
 
-                    case 7:
-                        //Listar todos os livros emprestados
-                        retornarMenu = true;
-                        break;
+                    foreach (char nomePessoa in pessoa.Nome)
+                    {
+                        Console.WriteLine(nomePessoa.ToString());
+                    }
+                    retornarMenu = true;
+                    break;
 
-                    default:
-                        Console.WriteLine("Opção Inválida");
-                        retornarMenu = true;
-                        break;
-                }
+                case 7:
+                    //Listar todos os livros emprestados
+                    retornarMenu = true;
+                    break;
+
+                default:
+                    Console.WriteLine("Opção Inválida");
+                    retornarMenu = true;
+                    break;
             }
-        }
     }
 }

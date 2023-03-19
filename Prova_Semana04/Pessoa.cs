@@ -4,21 +4,20 @@ public class Pessoa
 {
     //Atributos
     public int Id { get; set; }
-    public string Nome { get; set; }
-    public string Cpf { get; set; }
-    public string Telefone { get; set; }
-    public List<Livros> LivrosEmprestados { get; set; }
+    public string Nome { get; set; } = null!;
+    public string Cpf { get; set; } = null!;
+    public string Telefone { get; set; } = null!;
+    public List<Livros> LivrosEmprestados { get; set; } = null!;
 
-    
-    public void AdicionarLivroLista(int Livro)
+
+    public int AdicionarLivroLista(int Livro)
     {
         LivrosEmprestados.Add();
     }
-    
+
     public int RemoverLivroLista(int idLivro)
     {
         LivrosEmprestados.RemoveAt(idLivro);
         return idLivro;
     }
 }
-
