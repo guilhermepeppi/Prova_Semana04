@@ -1,91 +1,70 @@
-using System.Collections;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Prova_Semana04;
 
-public class Livros
+internal class Livros
 {
+    public Livros(int id, string titulo, string autor, string editora)
+    {
+        Id = id;
+        Titulo = titulo;
+        Autor = autor;
+        Editora = editora;
+    }
+
     //Atributos
-    public int Id { get; set; }
-    public string Titulo { get; set; }
-    public string Autor { get; set; }
-    public string Editora { get; set; }
-    public int QuantidadeExemplares { get; set; }
-    
+    private int Id { get; set; }
+    private string Titulo { get; set; }
+    private string Autor { get; set; }
+    private string Editora { get; set; }
+    private int QuantidadeExemplares { get; set; }
 
-    // Métodos
-    // EmprestarLivro(int quantidadeEmprestada) - Deverá decrementar a QuantidadeExemplares do livro ;
-    // DevolverLivro(int quantidadeDevolvida) - Deverá incrementar a QuantidadeExemplares do livro;
-
-    public int? EmprestarLivro(int quantidadeEmprestada)
+    public void AdicionarQuantidadeEstoque(int quantidade)
     {
-        Livros livros = new Livros();
-        
-        Pessoa pessoa = new Pessoa();
-        
-        Console.WriteLine("Digite o ID do Aluno");
-        
-        foreach (int idAlunos in pessoa.Id)
-            if (idAlunos == livros.Id)
-            {
-                Console.WriteLine("Pessoa já cadastrada");
-            }
-            else
-            {
-                livros.Id = int.Parse(Console.ReadLine());
-                
-                Console.WriteLine("Digite o ID do livro");
-                
-                foreach (int idLivros in livros.Id)
-                    if (idLivros == livros.Id) 
-                    {
-                        livros.Id = int.Parse(Console.ReadLine());
-                        Console.WriteLine($"O Livro {livros.Titulo} foi emprestado para " +
-                                          $"a pessoa {pessoa.Nome}");
-                        return 1;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Livro não cadastrado");
-                        return 0;
-                    }
-            }
-
-        return null;
+        QuantidadeExemplares += quantidade;
     }
 
-    public int? DevolverLivro(int quantidadeDevolvida)
+    public void AlterarTituloLivro(string novoTitulo)
     {
-        Livros livros = new Livros();
-        Pessoa pessoa = new Pessoa();
-        
-        Console.WriteLine("Digite o ID do Aluno");
-        
-        foreach (int idAlunos in livros.Id)
-            if (idAlunos == livros.Id)
-            {
-                Console.WriteLine("Pessoa já cadastrada");
-            }
-            else
-            {
-                livros.Id = int.Parse(Console.ReadLine());
-                
-                Console.WriteLine("Digite o ID do livro");
-                
-                foreach (int idLivros in livros.Id)
-                    if (idLivros == livros.Id) 
-                    {
-                        livros.Id = int.Parse(Console.ReadLine());
-                        Console.WriteLine($"O Livro {livros.Titulo} que estava com a pessoa {pessoa.Nome} "+
-                            $"foi devolvido com sucesso”");
-                        return 1;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Livro não cadastrado");
-                        return 0;
-                    }
-            }
-
-        return null;
+        Titulo = novoTitulo;
     }
+
+    public void AlterarAutorLivro(string novoAutor)
+    {
+        Autor = novoAutor;
+    }
+
+    public void AlterarEditora(string novaEditora)
+    {
+        Editora = novaEditora;
+    }
+
+    public string ObterNomeLivro()
+    {
+        return Titulo;
+    }
+
+    public string ObterAutorLivro()
+    {
+        return Autor;
+    }
+}
+
+
+// Métodos
+// EmprestarLivro(int quantidadeEmprestada) - Deverá decrementar a QuantidadeExemplares do livro ;
+// DevolverLivro(int quantidadeDevolvida) - Deverá incrementar a QuantidadeExemplares do livro;
+
+public void EmprestarLivro(int quantidadeEmprestada)
+{
+
+}
+
+public void DevolverLivro(int quantidadeDevolvida)
+{
+
 }

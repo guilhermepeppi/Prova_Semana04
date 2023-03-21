@@ -7,4 +7,7 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="IBiblioteca.cs" />
+    </ItemGroup>
 </Project>

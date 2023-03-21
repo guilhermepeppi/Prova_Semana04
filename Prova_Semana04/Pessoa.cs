@@ -1,23 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Prova_Semana04;
 
-public class Pessoa
+internal class Pessoa
 {
+    public Pessoa(int id, string nome, string cpf, string telefone)
+    {
+        Id = id;
+        Nome = nome;
+        Cpf = cpf;
+        Telefone = telefone;
+    }
+
     //Atributos
-    public int Id { get; set; }
-    public string Nome { get; set; } = null!;
-    public string Cpf { get; set; } = null!;
-    public string Telefone { get; set; } = null!;
-    public List<Livros> LivrosEmprestados { get; set; } = null!;
+    private int Id { get; set; }
+    private string Nome { get; set; }
+    private string Cpf { get; set; }
+    private string Telefone { get; set; }
+    private List<Livros> LivrosEmprestados { get; set; }
 
-
-    public int AdicionarLivroLista(int Livro)
+    public void AlterarNomePessoa(string novoNome)
     {
-        LivrosEmprestados.Add();
+        Nome = novoNome;
     }
 
-    public int RemoverLivroLista(int idLivro)
+    public void AlterarCpf(string novoCpf)
     {
-        LivrosEmprestados.RemoveAt(idLivro);
-        return idLivro;
+        Cpf = novoCpf;
     }
+
+    public void AlterarTelefone(string novoTelefone)
+    {
+        Telefone = novoTelefone;
+    }
+
+    public string ObterNomePessoa()
+    {
+        return Nome;
+    }
+
+}
+
+
+public void AdicionarLivroLista(Livros livros)
+{
+
+    LivrosEmprestados.Add();
+}
+
+public int RemoverLivroLista(int idLivro)
+
+{
+    LivrosEmprestados.Remove();
 }

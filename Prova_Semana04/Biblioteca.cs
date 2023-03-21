@@ -1,66 +1,100 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Prova_Semana04;
 
-public class Biblioteca
+internal class Biblioteca
 {
+
     //Atributos
-    public List<Pessoa> Pessoas { get; set; } = null!;
-    public List<Livros> Livros { get; set; } = null!;
+    private List<Pessoa> Pessoas { get; set; }
+    private List<Livros> Livros { get; set; }
 
 
     //Métodos:
 
     //CadastrarPessoa(Pessoa) - Deverá incluir uma pessoa na lista Pessoas do objeto Biblioteca;
-    public void CadastrarPessoa(int Pessoa)
+    public void CadastrarPessoa(Pessoa pessoa)
     {
-        Pessoa pessoa = new Pessoa();
+        string nome, cpf, telefone;
+        int id = 0;
+
+        // Solicitando dados de entrada
         Console.WriteLine("Digite o ID: ");
         Console.ReadLine();
 
-        foreach (int id in pessoa.Id)
-            if (id == pessoa.Id)
+        foreach (int idPessoa in id)
+        {
+            if (idPessoa == id)
+            {
                 Console.WriteLine("Pessoa já cadastrada");
+            }
             else
-                pessoa.Id = int.Parse(Console.ReadLine());
+            {
 
-        Console.WriteLine("Digite o Nome: ");
-        pessoa.Nome = Console.ReadLine();
+                Console.WriteLine("Digite o Nome: ");
+                nome = Console.ReadLine();
 
-        Console.WriteLine("Digite o CPF: ");
-        pessoa.Cpf = Console.ReadLine();
+                Console.WriteLine("Digite o CPF: ");
+                cpf = Console.ReadLine();
 
-        Console.WriteLine("Digite o telefone: ");
-        pessoa.Telefone = Console.ReadLine();
+                Console.WriteLine("Digite o telefone: ");
+                telefone = Console.ReadLine();
 
-        pessoa.LivrosEmprestados.Clear(); //Limpa os Livros emprestados
+                // Instanciando a pessoa
+                Pessoa pessoas = new Pessoa(id++, nome, cpf, telefone);
+
+                // Instanciando a biblioteca para guardar o livro
+                Biblioteca biblioteca = new Biblioteca();
+                biblioteca.CadastrarPessoa(pessoas);
+            }
+        }
     }
 
 
     //CadastrarLivro(Livro) - Deverá incluir um livro na lista de Livros do objeto Biblioteca;
-    public void CadastrarLivro(int Livro)
+    public void CadastrarLivro(Livros livros)
     {
-        Livros livro = new Livros();
+        string nomeLivro, autor, editora;
+        int quantidadeExemplares, id = 0;
 
+        // Solicitando dados de entrada
         Console.WriteLine("Digite o ID: ");
-        livro.Id = int.Parse(Console.ReadLine());
+        Console.ReadLine();
 
-        foreach (int id in livro.Id)
-            if (id == livro.Id)
-                Console.WriteLine("Livro já cadastrado");
+        foreach (int idLivro in )
+        {
+            if (idLivro == id)
+            {
+                Console.WriteLine("Pessoa já cadastrada");
+            }
             else
-                livro.Id = int.Parse(Console.ReadLine());
-                
+            {
+                Console.WriteLine("Informe o nome do novo livro: ");
+                nomeLivro = Console.ReadLine();
 
-        Console.WriteLine("Digite o Título: ");
-        livro.Titulo = Console.ReadLine();
+                Console.WriteLine("Informe o nome do autor do livro: ");
+                autor = Console.ReadLine();
 
-        Console.WriteLine("Digite o autor: ");
-        livro.Autor = Console.ReadLine();
+                Console.WriteLine("Informe o nome da editora do livro: ");
+                editora = Console.ReadLine();
 
-        Console.WriteLine("Digite a editora: ");
-        livro.Editora = Console.ReadLine();
+                Console.WriteLine("Informe a quantidade de exemplares: ");
+                quantidadeExemplares = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Digite a quantidade de exemplares: ");
-        livro.QuantidadeExemplares = int.Parse(Console.ReadLine());
+                // Instanciando o livro
+                Livros livro = new Livros(id++, nomeLivro, autor, editora);
+                livro.AdicionarQuantidadeEstoque(quantidadeExemplares);
+
+                // Instanciando a biblioteca para guardar o livro
+                Biblioteca biblioteca = new Biblioteca();
+                biblioteca.CadastrarLivro(livro);
+            }
+        }
+
     }
 
 
@@ -68,7 +102,7 @@ public class Biblioteca
     // e Adicionar um Livro na lista LivrosEmprestados do objeto Pessoa através do método AdicionarLivroLista;
     public int EmprestarLivroBiblioteca(int idLivro, int idPessoa)
     {
-        
+        return 0;
     }
 
 
@@ -77,7 +111,8 @@ public class Biblioteca
     // do método RemoverLivroLista;
     public int DevolverLivroBiblioteca(int idLivro, int idPessoa)
     {
-        
+
         return 0;
     }
+
 }

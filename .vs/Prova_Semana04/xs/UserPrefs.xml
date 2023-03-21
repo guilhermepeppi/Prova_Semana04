@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{B2A340EE-9DD2-4134-A58B-1B4EC659023F}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Prova_Semana04/Biblioteca.cs">
+    <Files>
+      <File FileName="Prova_Semana04/Program.cs" />
+      <File FileName="Prova_Semana04/Biblioteca.cs" Line="68" Column="33" />
+      <File FileName="Prova_Semana04/Livros.cs" />
+      <File FileName="Prova_Semana04/Pessoa.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Prova_Semana04" expanded="True">
+            <Node name="Prova_Semana04" expanded="True">
+              <Node name="Biblioteca.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Prova__Semana04 PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
