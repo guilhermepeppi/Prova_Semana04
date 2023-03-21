@@ -1,26 +1,30 @@
 ﻿<Properties StartupConfiguration="{B2A340EE-9DD2-4134-A58B-1B4EC659023F}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.ItemProperties.Prova__Semana04 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Prova_Semana04/Biblioteca.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Prova_Semana04/Program.cs">
     <Files>
-      <File FileName="Prova_Semana04/Program.cs" />
-      <File FileName="Prova_Semana04/Biblioteca.cs" Line="68" Column="33" />
-      <File FileName="Prova_Semana04/Livros.cs" />
-      <File FileName="Prova_Semana04/Pessoa.cs" />
+      <File FileName="Prova_Semana04/Program.cs" Line="27" Column="20" />
+      <File FileName="Prova_Semana04/Biblioteca.cs" Line="115" Column="26" />
+      <File FileName="Prova_Semana04/Livros.cs" Line="72" Column="1" />
+      <File FileName="Prova_Semana04/Pessoa.cs" Line="59" Column="22" />
+      <File FileName="../Mar 17 7_19 PM.cs" Line="1" Column="1" />
+      <File FileName="../Mar 20 8_26 PM.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Prova_Semana04" expanded="True">
             <Node name="Prova_Semana04" expanded="True">
-              <Node name="Biblioteca.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Prova__Semana04 PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

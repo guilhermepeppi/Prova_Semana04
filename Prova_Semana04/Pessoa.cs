@@ -8,6 +8,8 @@ namespace Prova_Semana04;
 
 internal class Pessoa
 {
+    internal IEnumerable<int> id;
+
     public Pessoa(int id, string nome, string cpf, string telefone)
     {
         Id = id;
@@ -48,12 +50,12 @@ internal class Pessoa
 
 public void AdicionarLivroLista(Livros livros)
 {
-
+    //to do : Guilherme
     LivrosEmprestados.Add();
 }
 
 public int RemoverLivroLista(int idLivro)
-
 {
+    //to do : Glaucia
     LivrosEmprestados.Remove();
 }

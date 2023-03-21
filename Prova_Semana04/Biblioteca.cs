@@ -26,7 +26,7 @@ internal class Biblioteca
         Console.WriteLine("Digite o ID: ");
         Console.ReadLine();
 
-        foreach (int idPessoa in id)
+        foreach (int idPessoa in pessoa.id)
         {
             if (idPessoa == id)
             {
@@ -65,7 +65,7 @@ internal class Biblioteca
         Console.WriteLine("Digite o ID: ");
         Console.ReadLine();
 
-        foreach (int idLivro in )
+        foreach (int idLivro in livros.id)
         {
             if (idLivro == id)
             {
@@ -102,6 +102,7 @@ internal class Biblioteca
     // e Adicionar um Livro na lista LivrosEmprestados do objeto Pessoa através do método AdicionarLivroLista;
     public int EmprestarLivroBiblioteca(int idLivro, int idPessoa)
     {
+        //to do : Glaucia
         return 0;
     }
 
@@ -111,7 +112,7 @@ internal class Biblioteca
     // do método RemoverLivroLista;
     public int DevolverLivroBiblioteca(int idLivro, int idPessoa)
     {
-
+        //to do : Glaucia
         return 0;
     }
 

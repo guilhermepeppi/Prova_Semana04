@@ -8,6 +8,8 @@ namespace Prova_Semana04;
 
 internal class Livros
 {
+    internal IEnumerable<int> id;
+
     public Livros(int id, string titulo, string autor, string editora)
     {
         Id = id;
@@ -61,10 +63,11 @@ internal class Livros
 
 public void EmprestarLivro(int quantidadeEmprestada)
 {
-
+   // to do : Kelly
 }
 
 public void DevolverLivro(int quantidadeDevolvida)
 {
+    // to do : Kelly
 
 }
