@@ -141,12 +141,22 @@ internal class Biblioteca
         }
     }
 
-    public void ImprimirLivrosEmprestados(int idPessoa)
+    public void ImprimirLivrosEmprestados(int id)
     {
-        Pessoa pessoa = ConsultarPessoasPorId(idPessoa);
+        Pessoa pessoa = ConsultarPessoasPorId(id);
         Console.WriteLine($"Livros emprestados por {pessoa}");
 
-        if (pessoa.liv)
+        if (pessoa.ObterLivrosEmprestados() != null)
+        {
+            foreach (var livro in pessoa.ObterLivrosEmprestados())
+            {
+                Console.WriteLine($"{livro} está emprestado para {pessoa}");
+            }
+        }
+        else
+        {
+            Console.WriteLine($"Nennum livro emprestado para {pessoa}");
+        }
       
     }
 

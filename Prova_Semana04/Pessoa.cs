@@ -17,6 +17,11 @@ internal class Pessoa
         Telefone = telefone;
     }
 
+    public Pessoa(List<Livros> livrosEmprestados)
+    {
+        LivrosEmprestados = livrosEmprestados;
+    }
+
     //Atributos
     private int Id { get; set; }
     private string Nome { get; set; }
@@ -51,9 +56,9 @@ internal class Pessoa
         return Id;
     }
 
-    public void ObterLivrosEmprestados()
+    public List<Livros> ObterLivrosEmprestados()
     {
-        List<Livros> livrosEmprestadosId = new List<Livros>(LivrosEmprestados);
+        return LivrosEmprestados;
     }
 
     public void AdicionarLivroLista(Livros livros)
