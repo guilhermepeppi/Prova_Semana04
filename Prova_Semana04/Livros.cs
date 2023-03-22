@@ -9,12 +9,13 @@ namespace Prova_Semana04;
 internal class Livros
 {
 
-    public Livros(int id, string titulo, string autor, string editora)
+    public Livros(int id, string titulo, string autor, string editora, int quantidadeExemplares)
     {
         Id = id;
         Titulo = titulo;
         Autor = autor;
         Editora = editora;
+        QuantidadeExemplares = quantidadeExemplares;
     }
 
     //Atributos
@@ -23,11 +24,6 @@ internal class Livros
     private string Autor { get; set; }
     private string Editora { get; set; }
     private int QuantidadeExemplares { get; set; }
-
-    public void AdicionarQuantidadeEstoque(int quantidade)
-    {
-        QuantidadeExemplares += quantidade;
-    }
 
     public void AlterarTituloLivro(string novoTitulo)
     {
@@ -65,12 +61,14 @@ internal class Livros
 
     public void EmprestarLivro(int quantidadeEmprestada)
     {
-        QuantidadeExemplares += 1;
+        QuantidadeExemplares = quantidadeEmprestada;
     }
 
-    public void DevolverLivro(int quantidadeDevolvida)
+    public int DevolverLivro(int quantidadeDevolvida)
     {
         QuantidadeExemplares -= 1;
+        return QuantidadeExemplares;
+
     }
 
 }

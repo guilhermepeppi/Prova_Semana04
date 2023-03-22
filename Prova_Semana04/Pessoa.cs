@@ -63,11 +63,12 @@ internal class Pessoa
 
     public void AdicionarLivroLista(Livros livros)
     {
-       
+       //FALTA ESSE
     }
 
     public int RemoverLivroLista(int idLivro)
     {
+        //FALTA ESSE
         return 0;
     }
 

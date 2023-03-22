@@ -86,7 +86,7 @@ internal class Biblioteca
 
             // Instanciando o livro
             Livros livro = new Livros(id++, nomeLivro, autor, editora);
-            livro.AdicionarQuantidadeEstoque(quantidadeExemplares);
+            livro.EmprestarLivro(quantidadeExemplares);
 
             // Instanciando a biblioteca para guardar o livro
             Biblioteca biblioteca = new Biblioteca();
@@ -100,7 +100,34 @@ internal class Biblioteca
     // e Adicionar um Livro na lista LivrosEmprestados do objeto Pessoa através do método AdicionarLivroLista;
     public void EmprestarLivroBiblioteca(int idLivro, int idPessoa)
     {
+        //FALTA CHAMAR O MÉTODO EMPRESTARLIVRO
 
+        Console.WriteLine("Digite o ID da pessoa: ");
+        idPessoa = int.Parse(Console.ReadLine());
+
+        ConsultarPessoasPorId(idPessoa);
+
+        if (false)
+        {
+            Console.WriteLine("Pessoa não cadastrada");
+        }
+        else
+        {
+            Console.WriteLine("Digite o ID do livro: ");
+            idLivro = int.Parse(Console.ReadLine());
+
+            ConsultarLivrosPorId(idLivro);
+
+            if (false)
+            {
+                Console.WriteLine("Livro não cadastrado");
+            }
+            else
+            {
+                Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa}");
+                
+            }
+        }
     }
 
 
@@ -109,7 +136,7 @@ internal class Biblioteca
     // do método RemoverLivroLista;
     public int DevolverLivroBiblioteca(int idLivro, int idPessoa)
     {
-        //to do : Glaucia
+        //FALTA ESSE
         return 0;
     }
 
@@ -157,7 +184,7 @@ internal class Biblioteca
         {
             Console.WriteLine($"Nennum livro emprestado para {pessoa}");
         }
-      
+
     }
 
 }
