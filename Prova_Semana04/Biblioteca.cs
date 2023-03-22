@@ -134,10 +134,36 @@ internal class Biblioteca
     //DevolverLivroBiblioteca(int idLivro, int idPessoa) - Deverá chamar o método DevolverLivro do
     // objeto Livro e Remover um Livro na lista LivrosEmprestados do objeto Pessoa através
     // do método RemoverLivroLista;
-    public int DevolverLivroBiblioteca(int idLivro, int idPessoa)
+    public void DevolverLivroBiblioteca(int idLivro, int idPessoa)
     {
-        //FALTA ESSE
-        return 0;
+        //FALTA CHAMAR O MÉTODO DEVOLVERLIVRO
+
+        Console.WriteLine("Digite o ID da pessoa: ");
+        idPessoa = int.Parse(Console.ReadLine());
+
+        ConsultarPessoasPorId(idPessoa);
+
+        if (false)
+        {
+            Console.WriteLine("Pessoa não cadastrada");
+        }
+        else
+        {
+            Console.WriteLine("Digite o ID do livro: ");
+            idLivro = int.Parse(Console.ReadLine());
+
+            ConsultarLivrosPorId(idLivro);
+
+            if (false)
+            {
+                Console.WriteLine("Livro não cadastrado");
+            }
+            else
+            {
+                Console.WriteLine($"O Livro {idLivro} que estava com a pessoa {idPessoa} foi devolvido com sucesso");
+
+            }
+        }
     }
 
     public Livros ConsultarLivrosPorId(int id)

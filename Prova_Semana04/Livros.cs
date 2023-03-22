@@ -64,11 +64,9 @@ internal class Livros
         QuantidadeExemplares = quantidadeEmprestada;
     }
 
-    public int DevolverLivro(int quantidadeDevolvida)
+    public void DevolverLivro(int quantidadeDevolvida)
     {
-        QuantidadeExemplares -= 1;
-        return QuantidadeExemplares;
-
+        QuantidadeExemplares = quantidadeDevolvida;
     }
 
 }
