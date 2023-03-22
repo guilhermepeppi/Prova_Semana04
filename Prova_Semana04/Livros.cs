@@ -8,7 +8,6 @@ namespace Prova_Semana04;
 
 internal class Livros
 {
-    internal IEnumerable<int> id;
 
     public Livros(int id, string titulo, string autor, string editora)
     {
@@ -54,20 +53,24 @@ internal class Livros
     {
         return Autor;
     }
-}
 
+    public int ObterIdLivro()
+    {
+        return Id;
+    }
 
-// Métodos
-// EmprestarLivro(int quantidadeEmprestada) - Deverá decrementar a QuantidadeExemplares do livro ;
-// DevolverLivro(int quantidadeDevolvida) - Deverá incrementar a QuantidadeExemplares do livro;
+    // Métodos
+    // EmprestarLivro(int quantidadeEmprestada) - Deverá decrementar a QuantidadeExemplares do livro ;
+    // DevolverLivro(int quantidadeDevolvida) - Deverá incrementar a QuantidadeExemplares do livro;
 
-public void EmprestarLivro(int quantidadeEmprestada)
-{
-   // to do : Kelly
-}
+    public void EmprestarLivro(int quantidadeEmprestada)
+    {
+        QuantidadeExemplares += 1;
+    }
 
-public void DevolverLivro(int quantidadeDevolvida)
-{
-    // to do : Kelly
+    public void DevolverLivro(int quantidadeDevolvida)
+    {
+        QuantidadeExemplares -= 1;
+    }
 
 }

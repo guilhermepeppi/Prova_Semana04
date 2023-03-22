@@ -8,7 +8,6 @@ namespace Prova_Semana04;
 
 internal class Pessoa
 {
-    internal IEnumerable<int> id;
 
     public Pessoa(int id, string nome, string cpf, string telefone)
     {
@@ -24,6 +23,8 @@ internal class Pessoa
     private string Cpf { get; set; }
     private string Telefone { get; set; }
     private List<Livros> LivrosEmprestados { get; set; }
+
+    
 
     public void AlterarNomePessoa(string novoNome)
     {
@@ -45,17 +46,26 @@ internal class Pessoa
         return Nome;
     }
 
-}
+    public int ObterIdPessoa()
+    {
+        return Id;
+    }
+
+    public void ObterLivrosEmprestados()
+    {
+        List<Livros> livrosEmprestadosId = new List<Livros>(LivrosEmprestados);
+    }
+
+    public void AdicionarLivroLista(Livros livros)
+    {
+       
+    }
+
+    public int RemoverLivroLista(int idLivro)
+    {
+        return 0;
+    }
 
 
-public void AdicionarLivroLista(Livros livros)
-{
-    //to do : Guilherme
-    LivrosEmprestados.Add();
-}
-
-public int RemoverLivroLista(int idLivro)
-{
-    //to do : Glaucia
-    LivrosEmprestados.Remove();
+    
 }

@@ -21,6 +21,30 @@ internal class Program
 
         var menu = int.Parse(Console.ReadLine()!);
 
+        Biblioteca biblioteca = new Biblioteca();
+
+        switch (menu)
+        {
+            case 1:
+                biblioteca.CadastrarPessoa();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                biblioteca.ImprimirRelatorioLivros();
+                break;
+            case 6:
+                biblioteca.ImprimirRelatorioPessoas();
+                break;
+            case 7:
+                break;
+            default:
+                break;
+        }
     }
 }
 
