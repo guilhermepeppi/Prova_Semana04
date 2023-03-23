@@ -8,7 +8,6 @@ namespace Prova_Semana04;
 
 internal class Biblioteca
 {
-
     //Atributos
     private List<Pessoa> Pessoas { get; set; }
     private List<Livros> Livros { get; set; }
@@ -28,13 +27,13 @@ internal class Biblioteca
 
         ConsultarPessoasPorId(id);
 
-        if (true)
+        if (ConsultarPessoasPorId(id)
+
         {
             Console.WriteLine("Pessoa já cadastrada");
         }
         else
         {
-
             Console.WriteLine("Digite o Nome: ");
             nome = Console.ReadLine();
 
@@ -66,7 +65,7 @@ internal class Biblioteca
 
         ConsultarLivrosPorId(id);
 
-        if (true)
+        if (ConsultarLivrosPorId(id))
         {
             Console.WriteLine("Livro já cadastrado");
         }
@@ -85,14 +84,13 @@ internal class Biblioteca
             quantidadeExemplares = int.Parse(Console.ReadLine());
 
             // Instanciando o livro
-            Livros livro = new Livros(id++, nomeLivro, autor, editora);
+            Livros livro = new Livros(id++, nomeLivro, autor, editora, quantidadeExemplares);
             livro.EmprestarLivro(quantidadeExemplares);
 
             // Instanciando a biblioteca para guardar o livro
             Biblioteca biblioteca = new Biblioteca();
             biblioteca.CadastrarLivro(livro);
         }
-
     }
 
 
@@ -105,9 +103,9 @@ internal class Biblioteca
         Console.WriteLine("Digite o ID da pessoa: ");
         idPessoa = int.Parse(Console.ReadLine());
 
-        ConsultarPessoasPorId(idPessoa);
+        Pessoa pessoa = ConsultarPessoasPorId(idPessoa);
 
-        if (false)
+        if (pessoa.ObterIdPessoa().count)
         {
             Console.WriteLine("Pessoa não cadastrada");
         }
@@ -116,16 +114,15 @@ internal class Biblioteca
             Console.WriteLine("Digite o ID do livro: ");
             idLivro = int.Parse(Console.ReadLine());
 
-            ConsultarLivrosPorId(idLivro);
+            Livros livro = ConsultarLivrosPorId(idLivro);
 
-            if (false)
+            if (livro.ObterIdLivro() != null)
             {
                 Console.WriteLine("Livro não cadastrado");
             }
             else
             {
-                Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa}");
-                
+                Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa} com sucesso");
             }
         }
     }
@@ -143,7 +140,9 @@ internal class Biblioteca
 
         ConsultarPessoasPorId(idPessoa);
 
-        if (false)
+        Pessoa pessoa = ConsultarPessoasPorId(idPessoa);
+
+        if (pessoa.ObterIdPessoa() != null)
         {
             Console.WriteLine("Pessoa não cadastrada");
         }
@@ -154,14 +153,15 @@ internal class Biblioteca
 
             ConsultarLivrosPorId(idLivro);
 
-            if (false)
+            Livros livro = ConsultarLivrosPorId(idLivro);
+
+            if (livro.ObterIdLivro() != null)
             {
                 Console.WriteLine("Livro não cadastrado");
             }
             else
             {
                 Console.WriteLine($"O Livro {idLivro} que estava com a pessoa {idPessoa} foi devolvido com sucesso");
-
             }
         }
     }
@@ -199,7 +199,7 @@ internal class Biblioteca
         Pessoa pessoa = ConsultarPessoasPorId(id);
         Console.WriteLine($"Livros emprestados por {pessoa}");
 
-        if (pessoa.ObterLivrosEmprestados() != null)
+        if (pessoa.ObterLivrosEmprestados().Count > 0)
         {
             foreach (var livro in pessoa.ObterLivrosEmprestados())
             {
@@ -210,7 +210,5 @@ internal class Biblioteca
         {
             Console.WriteLine($"Nennum livro emprestado para {pessoa}");
         }
-
     }
-
 }

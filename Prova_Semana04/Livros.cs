@@ -8,7 +8,6 @@ namespace Prova_Semana04;
 
 internal class Livros
 {
-
     public Livros(int id, string titulo, string autor, string editora, int quantidadeExemplares)
     {
         Id = id;
@@ -68,5 +67,4 @@ internal class Livros
     {
         QuantidadeExemplares = quantidadeDevolvida;
     }
-
 }

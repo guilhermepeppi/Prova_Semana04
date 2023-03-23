@@ -8,7 +8,6 @@ namespace Prova_Semana04;
 
 internal class Pessoa
 {
-
     public Pessoa(int id, string nome, string cpf, string telefone)
     {
         Id = id;
@@ -17,20 +16,14 @@ internal class Pessoa
         Telefone = telefone;
     }
 
-    public Pessoa(List<Livros> livrosEmprestados)
-    {
-        LivrosEmprestados = livrosEmprestados;
-    }
-
     //Atributos
     private int Id { get; set; }
     private string Nome { get; set; }
     private string Cpf { get; set; }
     private string Telefone { get; set; }
-    private List<Livros> LivrosEmprestados { get; set; }
+    private List<Livros> LivrosEmprestados { get; set; } = null!;
 
-    
-
+    //Métodos
     public void AlterarNomePessoa(string novoNome)
     {
         Nome = novoNome;
@@ -63,7 +56,7 @@ internal class Pessoa
 
     public void AdicionarLivroLista(Livros livros)
     {
-       //FALTA ESSE
+        //FALTA ESSE
     }
 
     public int RemoverLivroLista(int idLivro)
@@ -71,7 +64,4 @@ internal class Pessoa
         //FALTA ESSE
         return 0;
     }
-
-
-    
 }
