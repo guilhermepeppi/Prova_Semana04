@@ -27,7 +27,7 @@ internal class Biblioteca
 
         ConsultarPessoasPorId(id);
 
-        if (ConsultarPessoasPorId(id)
+        if (ConsultarPessoasPorId(id) != null)
 
         {
             Console.WriteLine("Pessoa já cadastrada");
@@ -63,9 +63,7 @@ internal class Biblioteca
         Console.WriteLine("Digite o ID: ");
         Console.ReadLine();
 
-        ConsultarLivrosPorId(id);
-
-        if (ConsultarLivrosPorId(id))
+        if (ConsultarLivrosPorId(id) != null)
         {
             Console.WriteLine("Livro já cadastrado");
         }
@@ -99,13 +97,14 @@ internal class Biblioteca
     public void EmprestarLivroBiblioteca(int idLivro, int idPessoa)
     {
         //FALTA CHAMAR O MÉTODO EMPRESTARLIVRO
+        Pessoa pessoa = ConsultarPessoasPorId(id);
 
         Console.WriteLine("Digite o ID da pessoa: ");
         idPessoa = int.Parse(Console.ReadLine());
 
         Pessoa pessoa = ConsultarPessoasPorId(idPessoa);
 
-        if (pessoa.ObterIdPessoa().count)
+        if (pessoa.ObterIdPessoa() == 0)
         {
             Console.WriteLine("Pessoa não cadastrada");
         }
@@ -116,7 +115,7 @@ internal class Biblioteca
 
             Livros livro = ConsultarLivrosPorId(idLivro);
 
-            if (livro.ObterIdLivro() != null)
+            if (livro.ObterIdLivro() == 0)
             {
                 Console.WriteLine("Livro não cadastrado");
             }
@@ -142,7 +141,7 @@ internal class Biblioteca
 
         Pessoa pessoa = ConsultarPessoasPorId(idPessoa);
 
-        if (pessoa.ObterIdPessoa() != null)
+        if (pessoa.ObterIdPessoa() == 0)
         {
             Console.WriteLine("Pessoa não cadastrada");
         }
@@ -155,7 +154,7 @@ internal class Biblioteca
 
             Livros livro = ConsultarLivrosPorId(idLivro);
 
-            if (livro.ObterIdLivro() != null)
+            if (livro.ObterIdLivro() == 0)
             {
                 Console.WriteLine("Livro não cadastrado");
             }
