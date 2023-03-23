@@ -9,8 +9,8 @@ namespace Prova_Semana04;
 internal class Biblioteca
 {
     //Atributos
-    private List<Pessoa> Pessoas { get; set; }
-    private List<Livros> Livros { get; set; }
+    private List<Pessoa>? Pessoas { get; set; }
+    private List<Livros>? Livros { get; set; }
 
 
     //Métodos:

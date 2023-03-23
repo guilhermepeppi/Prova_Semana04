@@ -26,7 +26,7 @@ internal class Program
         switch (menu)
         {
             case 1:
-                biblioteca.CadastrarPessoa();
+                //biblioteca.CadastrarPessoa();
                 break;
             case 2:
                 break;
