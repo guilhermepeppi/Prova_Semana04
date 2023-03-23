@@ -12,12 +12,12 @@ internal class Program
     {
         Console.WriteLine("Digite a opção desejada: ");
         Console.WriteLine("1 - Cadastrar Pessoa " +
-                          "2 - Cadastrar Livro" +
-                          "3 - Emprestar Livro" +
-                          "4 - Devolver Livro" +
-                          "5 - Listar todos os livros" +
-                          "6 - Listar todas as pessoas cadastradas" +
-                          "7 - Listar todos os livros emprestados");
+                          "\n2 - Cadastrar Livro" +
+                          "\n3 - Emprestar Livro" +
+                          "\n4 - Devolver Livro" +
+                          "\n5 - Listar todos os livros" +
+                          "\n6 - Listar todas as pessoas cadastradas" +
+                          "\n7 - Listar todos os livros emprestados");
 
         var menu = int.Parse(Console.ReadLine()!);
 
@@ -29,10 +29,13 @@ internal class Program
                 //biblioteca.CadastrarPessoa();
                 break;
             case 2:
+                biblioteca.CadastrarLivro();
                 break;
             case 3:
+                biblioteca.EmprestarLivroBiblioteca();
                 break;
             case 4:
+                biblioteca.DevolverLivroBiblioteca();
                 break;
             case 5:
                 biblioteca.ImprimirRelatorioLivros();
@@ -41,11 +44,10 @@ internal class Program
                 biblioteca.ImprimirRelatorioPessoas();
                 break;
             case 7:
+                biblioteca.ImprimirLivrosEmprestados();
                 break;
             default:
                 break;
         }
     }
 }
-
-//to do : Guilherme
