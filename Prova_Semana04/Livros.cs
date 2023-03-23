@@ -54,10 +54,6 @@ internal class Livros
         return Id;
     }
 
-    // Métodos
-    // EmprestarLivro(int quantidadeEmprestada) - Deverá decrementar a QuantidadeExemplares do livro ;
-    // DevolverLivro(int quantidadeDevolvida) - Deverá incrementar a QuantidadeExemplares do livro;
-
     public int EmprestarLivro(int quantidadeEmprestada)
     {
         QuantidadeExemplares -= quantidadeEmprestada;

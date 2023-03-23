@@ -97,7 +97,7 @@ internal class Biblioteca
     public void EmprestarLivroBiblioteca(int idLivro, int idPessoa)
     {
         //FALTA CHAMAR O MÉTODO EMPRESTARLIVRO
-        Livros livro = livro.EmprestarLivro(1);
+
 
         Console.WriteLine("Digite o ID da pessoa: ");
         idPessoa = int.Parse(Console.ReadLine());
@@ -122,11 +122,10 @@ internal class Biblioteca
             else
             {
                 Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa} com sucesso");
-                Pessoa pessoas = pessoas.AdicionarLivroLista();
+                Pessoa pessoas = pessoas.AdicionarLivroLista(idLivro);
             }
         }
     }
-
 
     //DevolverLivroBiblioteca(int idLivro, int idPessoa) - Deverá chamar o método DevolverLivro do
     // objeto Livro e Remover um Livro na lista LivrosEmprestados do objeto Pessoa através
@@ -162,6 +161,7 @@ internal class Biblioteca
             else
             {
                 Console.WriteLine($"O Livro {idLivro} que estava com a pessoa {idPessoa} foi devolvido com sucesso");
+
             }
         }
     }

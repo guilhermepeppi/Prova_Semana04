@@ -56,12 +56,11 @@ internal class Pessoa
 
     public void AdicionarLivroLista(Livros livros)
     {
-        //FALTA ESSE
+        LivrosEmprestados.Add(livros);
     }
 
-    public int RemoverLivroLista(int idLivro)
+    public void RemoverLivroLista(int idLivro)
     {
-        //FALTA ESSE
-        return 0;
+        LivrosEmprestados.RemoveAt(idLivro);
     }
 }
