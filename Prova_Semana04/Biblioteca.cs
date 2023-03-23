@@ -122,7 +122,7 @@ internal class Biblioteca
             else
             {
                 Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa} com sucesso");
-                Pessoa pessoas = pessoas.AdicionarLivroLista(idLivro);
+                Pessoa pessoas = pessoas.AdicionarLivroLista();
             }
         }
     }
