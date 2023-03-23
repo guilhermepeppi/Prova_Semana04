@@ -97,7 +97,7 @@ internal class Biblioteca
     public void EmprestarLivroBiblioteca(int idLivro, int idPessoa)
     {
         //FALTA CHAMAR O MÉTODO EMPRESTARLIVRO
-        Pessoa pessoa = ConsultarPessoasPorId(id);
+        Livros livro = livro.EmprestarLivro(1);
 
         Console.WriteLine("Digite o ID da pessoa: ");
         idPessoa = int.Parse(Console.ReadLine());
@@ -122,6 +122,7 @@ internal class Biblioteca
             else
             {
                 Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa} com sucesso");
+                Pessoa pessoas = pessoas.AdicionarLivroLista();
             }
         }
     }

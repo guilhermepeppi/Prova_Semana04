@@ -58,13 +58,15 @@ internal class Livros
     // EmprestarLivro(int quantidadeEmprestada) - Deverá decrementar a QuantidadeExemplares do livro ;
     // DevolverLivro(int quantidadeDevolvida) - Deverá incrementar a QuantidadeExemplares do livro;
 
-    public void EmprestarLivro(int quantidadeEmprestada)
+    public int EmprestarLivro(int quantidadeEmprestada)
     {
-        QuantidadeExemplares = quantidadeEmprestada;
+        QuantidadeExemplares -= quantidadeEmprestada;
+        return QuantidadeExemplares;
     }
 
-    public void DevolverLivro(int quantidadeDevolvida)
+    public int DevolverLivro(int quantidadeDevolvida)
     {
-        QuantidadeExemplares = quantidadeDevolvida;
+        QuantidadeExemplares += quantidadeDevolvida;
+        return QuantidadeExemplares;
     }
 }
