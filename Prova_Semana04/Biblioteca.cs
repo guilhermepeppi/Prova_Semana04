@@ -42,9 +42,6 @@ internal class Biblioteca
 
     public void EmprestarLivroBiblioteca(int idLivro, int idPessoa)
     {
-        //FALTA CHAMAR O MÉTODO EMPRESTARLIVRO
-
-
         Console.WriteLine("Digite o ID da pessoa: ");
         idPessoa = int.Parse(Console.ReadLine());
 
@@ -68,6 +65,8 @@ internal class Biblioteca
             else
             {
                 Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa} com sucesso");
+                pessoa.AdicionarLivroLista(livro);
+                livro.EmprestarLivro(1);
 
             }
         }
@@ -78,8 +77,6 @@ internal class Biblioteca
     // do método RemoverLivroLista;
     public void DevolverLivroBiblioteca(int idLivro, int idPessoa)
     {
-        //FALTA CHAMAR O MÉTODO DEVOLVERLIVRO
-
         Console.WriteLine("Digite o ID da pessoa: ");
         idPessoa = int.Parse(Console.ReadLine());
 
@@ -107,7 +104,8 @@ internal class Biblioteca
             else
             {
                 Console.WriteLine($"O Livro {idLivro} que estava com a pessoa {idPessoa} foi devolvido com sucesso");
-
+                pessoa.RemoverLivroLista(idLivro);
+                livro.DevolverLivro(1);
             }
         }
     }
@@ -126,41 +124,50 @@ internal class Biblioteca
 
     public void ImprimirRelatorioLivros()
     {
-        foreach (var livro in Livros)
+        if (Livros.Count > 0)
         {
-            Console.WriteLine($"Livro: {livro.ObterNomeLivro()} Autor: {livro.ObterAutorLivro()}");
+            foreach (Livros livro in Livros)
+            {
+                Console.WriteLine($"Livro: {livro.ObterNomeLivro()} Autor: {livro.ObterAutorLivro()}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Não há livros cadastrados");
         }
     }
 
     public void ImprimirRelatorioPessoas()
     {
-        foreach (Pessoa pessoa in Pessoas)
+        if (Pessoas.Count > 0)
         {
-            Console.WriteLine($"Nome: {pessoa.ObterNomePessoa()}");
+            foreach (Pessoa pessoa in Pessoas)
+            {
+                Console.WriteLine($"Pessoa: {pessoa.ObterNomePessoa()}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Não há pessoas cadastradas");
         }
     }
 
     public void ImprimirLivrosEmprestados()
     {
-        //  Listar todos os livros emprestados
-        // Percorrer a lista livrosemprestados da classe Pessoa e então os imprimir na tela da seguinte forma: “{Nome do Livro} está emprestado para {nome da pessoa}”, se não houver livros emprestados, imprimir a mensagem “Não há livros emprestados”.
-
         foreach (Pessoa pessoa in Pessoas)
         {
-            if (pessoa.ObterLivrosEmprestados().Count == 0)
-            {
-                Console.WriteLine("Não há livros emprestados");
-            }
-            else
+            if (pessoa.ObterLivrosEmprestados().Count > 0)
             {
                 foreach (Livros livro in pessoa.ObterLivrosEmprestados())
                 {
                     Console.WriteLine($"O livro {livro.ObterNomeLivro()} está emprestado para {pessoa.ObterNomePessoa()}");
                 }
             }
-
+            else
+            {
+                Console.WriteLine("Não há livros emprestados");
+            }
         }
-
 
     }
 }

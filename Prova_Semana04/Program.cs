@@ -43,9 +43,8 @@ internal class Program
                     string cpf = Console.ReadLine();
                     Console.WriteLine("Digite o telefone da pessoa: ");
                     string telefone = Console.ReadLine();
-
                     List<Livros> livrosEmprestados = new List<Livros>();
-                    Pessoa pessoa = new Pessoa(id++, nome, cpf, telefone);
+                    Pessoa pessoa = new Pessoa(id++, nome, cpf, telefone, livrosEmprestados);
                     biblioteca.CadastrarPessoa(pessoa);
                 }
                 break;
@@ -73,7 +72,6 @@ internal class Program
                     livro.EmprestarLivro(quantidadeExemplares);
                     biblioteca.CadastrarLivro(livro);
                 }
-
                 break;
             case 3:
                 Console.WriteLine("\nDigite o id da pessoa: ");

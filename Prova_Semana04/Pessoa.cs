@@ -8,16 +8,17 @@ namespace Prova_Semana04;
 
 internal class Pessoa
 {
-    public Pessoa(int id, string nome, string cpf, string telefone)
+    public Pessoa(int id, string nome, string cpf, string telefone, List<Livros> livrosEmprestados)
     {
         Id = id;
         Nome = nome;
         Cpf = cpf;
         Telefone = telefone;
+        LivrosEmprestados = livrosEmprestados;
     }
 
     //Atributos
-    private int Id { get; set; } 
+    private int Id { get; set; }
     private string Nome { get; set; }
     private string Cpf { get; set; }
     private string Telefone { get; set; }
@@ -46,7 +47,7 @@ internal class Pessoa
 
     public int ObterIdPessoa()
     {
-        return Id; 
+        return Id;
     }
 
     public List<Livros> ObterLivrosEmprestados()
