@@ -27,7 +27,7 @@ internal class Biblioteca
         if (Pessoas == null)
             Pessoas = new List<Pessoa>();
         Pessoas.Add(pessoas);
-        Livros = new List<Livros>();
+       
     }
 
 
