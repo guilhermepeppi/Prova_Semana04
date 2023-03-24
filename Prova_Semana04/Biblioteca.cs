@@ -27,6 +27,7 @@ internal class Biblioteca
         if (Pessoas == null)
             Pessoas = new List<Pessoa>();
         Pessoas.Add(pessoas);
+        Livros = new List<Livros>();
     }
 
 
@@ -42,72 +43,51 @@ internal class Biblioteca
 
     public void EmprestarLivroBiblioteca(int idLivro, int idPessoa)
     {
-        Console.WriteLine("Digite o ID da pessoa: ");
-        idPessoa = int.Parse(Console.ReadLine());
-
         Pessoa pessoa = ConsultarPessoasPorId(idPessoa);
+        Livros livro = ConsultarLivrosPorId(idLivro);
 
-        if (pessoa.ObterIdPessoa() == 0)
+        if (pessoa != null)
         {
-            Console.WriteLine("Pessoa não cadastrada");
-        }
-        else
-        {
-            Console.WriteLine("Digite o ID do livro: ");
-            idLivro = int.Parse(Console.ReadLine());
-
-            Livros livro = ConsultarLivrosPorId(idLivro);
-
-            if (livro.ObterIdLivro() == 0)
+            if (livro != null)
             {
-                Console.WriteLine("Livro não cadastrado");
+                pessoa.AdicionarLivroLista(livro);
+                livro.EmprestarLivro(idPessoa);
+                Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa}");
             }
             else
             {
-                Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa} com sucesso");
-                pessoa.AdicionarLivroLista(livro);
-                livro.EmprestarLivro(1);
-
+                Console.WriteLine("Livro não cadastrado");
             }
+        }
+        else
+        {
+            Console.WriteLine("Pessoa não cadastrada");
         }
     }
 
-    //DevolverLivroBiblioteca(int idLivro, int idPessoa) - Deverá chamar o método DevolverLivro do
-    // objeto Livro e Remover um Livro na lista LivrosEmprestados do objeto Pessoa através
-    // do método RemoverLivroLista;
     public void DevolverLivroBiblioteca(int idLivro, int idPessoa)
     {
-        Console.WriteLine("Digite o ID da pessoa: ");
-        idPessoa = int.Parse(Console.ReadLine());
-
-        ConsultarPessoasPorId(idPessoa);
-
         Pessoa pessoa = ConsultarPessoasPorId(idPessoa);
+        Livros livro = ConsultarLivrosPorId(idLivro);
 
-        if (pessoa.ObterIdPessoa() == 0)
+        if (pessoa != null)
         {
-            Console.WriteLine("Pessoa não cadastrada");
-        }
-        else
-        {
-            Console.WriteLine("Digite o ID do livro: ");
-            idLivro = int.Parse(Console.ReadLine());
-
-            ConsultarLivrosPorId(idLivro);
-
-            Livros livro = ConsultarLivrosPorId(idLivro);
-
-            if (livro.ObterIdLivro() == 0)
+            if (livro != null)
             {
-                Console.WriteLine("Livro não cadastrado");
+                pessoa.RemoverLivroLista(idLivro);
+                livro.EmprestarLivro(0);
+                Console.WriteLine($"O Livro {idLivro} que estava com a pessoa {idPessoa} foi devolvido com sucesso");
             }
             else
             {
-                Console.WriteLine($"O Livro {idLivro} que estava com a pessoa {idPessoa} foi devolvido com sucesso");
-                pessoa.RemoverLivroLista(idLivro);
-                livro.DevolverLivro(1);
+                Console.WriteLine("Livro não cadastrado");
             }
         }
+        else
+        {
+            Console.WriteLine("Pessoa não cadastrada");
+        }
+   
     }
 
     public Livros ConsultarLivrosPorId(int id)
@@ -154,20 +134,23 @@ internal class Biblioteca
 
     public void ImprimirLivrosEmprestados()
     {
-        foreach (Pessoa pessoa in Pessoas)
+        if (Pessoas.Count > 0)
         {
-            if (pessoa.ObterLivrosEmprestados().Count > 0)
+            foreach (Pessoa pessoa in Pessoas)
             {
+                Console.WriteLine($"Pessoa: {pessoa.ObterNomePessoa()}");
                 foreach (Livros livro in pessoa.ObterLivrosEmprestados())
                 {
-                    Console.WriteLine($"O livro {livro.ObterNomeLivro()} está emprestado para {pessoa.ObterNomePessoa()}");
+                    Console.WriteLine($"Livro: {livro.ObterNomeLivro()} Autor: {livro.ObterAutorLivro()}");
                 }
             }
-            else
-            {
-                Console.WriteLine("Não há livros emprestados");
-            }
+        }
+        else
+        {
+            Console.WriteLine("Não há livros cadastradas");
         }
 
     }
+
+
 }

@@ -8,13 +8,12 @@ namespace Prova_Semana04;
 
 internal class Pessoa
 {
-    public Pessoa(int id, string nome, string cpf, string telefone, List<Livros> livrosEmprestados)
+    public Pessoa(int id, string nome, string cpf, string telefone)
     {
         Id = id;
         Nome = nome;
         Cpf = cpf;
         Telefone = telefone;
-        LivrosEmprestados = livrosEmprestados;
     }
 
     //Atributos
