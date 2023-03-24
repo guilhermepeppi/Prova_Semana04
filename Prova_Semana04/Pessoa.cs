@@ -17,11 +17,11 @@ internal class Pessoa
     }
 
     //Atributos
-    private int Id { get; set; }
+    private int Id { get; set; } 
     private string Nome { get; set; }
     private string Cpf { get; set; }
     private string Telefone { get; set; }
-    private List<Livros> LivrosEmprestados { get; set; } = null!;
+    private List<Livros> LivrosEmprestados { get; set; }
 
     //Métodos
     public void AlterarNomePessoa(string novoNome)
@@ -46,7 +46,7 @@ internal class Pessoa
 
     public int ObterIdPessoa()
     {
-        return Id;
+        return Id; 
     }
 
     public List<Livros> ObterLivrosEmprestados()
@@ -63,4 +63,5 @@ internal class Pessoa
     {
         LivrosEmprestados.RemoveAt(idLivro);
     }
+
 }
