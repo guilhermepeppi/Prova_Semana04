@@ -52,16 +52,16 @@ internal class Biblioteca
             {
                 pessoa.AdicionarLivroLista(livro);
                 livro.EmprestarLivro(idPessoa);
-                Console.WriteLine($"O Livro {idLivro} foi emprestado para a pessoa {idPessoa}");
+                Console.WriteLine($"\nO Livro {idLivro} foi emprestado para a pessoa {idPessoa}");
             }
             else
             {
-                Console.WriteLine("Livro não cadastrado");
+                Console.WriteLine("\nLivro não cadastrado");
             }
         }
         else
         {
-            Console.WriteLine("Pessoa não cadastrada");
+            Console.WriteLine("\nPessoa não cadastrada");
         }
     }
 
@@ -76,16 +76,16 @@ internal class Biblioteca
             {
                 pessoa.RemoverLivroLista(idLivro);
                 livro.EmprestarLivro(0);
-                Console.WriteLine($"O Livro {idLivro} que estava com a pessoa {idPessoa} foi devolvido com sucesso");
+                Console.WriteLine($"\nO Livro {idLivro} que estava com a pessoa {idPessoa} foi devolvido com sucesso");
             }
             else
             {
-                Console.WriteLine("Livro não cadastrado");
+                Console.WriteLine("\nLivro não cadastrado");
             }
         }
         else
         {
-            Console.WriteLine("Pessoa não cadastrada");
+            Console.WriteLine("\nPessoa não cadastrada");
         }
    
     }
@@ -108,12 +108,12 @@ internal class Biblioteca
         {
             foreach (Livros livro in Livros)
             {
-                Console.WriteLine($"Livro: {livro.ObterNomeLivro()} Autor: {livro.ObterAutorLivro()}");
+                Console.WriteLine($"\nLivro: {livro.ObterNomeLivro()} Autor: {livro.ObterAutorLivro()}");
             }
         }
         else
         {
-            Console.WriteLine("Não há livros cadastrados");
+            Console.WriteLine("\nNão há livros cadastrados");
         }
     }
 
@@ -123,12 +123,12 @@ internal class Biblioteca
         {
             foreach (Pessoa pessoa in Pessoas)
             {
-                Console.WriteLine($"Pessoa: {pessoa.ObterNomePessoa()}");
+                Console.WriteLine($"\nPessoa: {pessoa.ObterNomePessoa()}");
             }
         }
         else
         {
-            Console.WriteLine("Não há pessoas cadastradas");
+            Console.WriteLine("\nNão há pessoas cadastradas");
         }
     }
 
@@ -141,13 +141,13 @@ internal class Biblioteca
                 Console.WriteLine($"Pessoa: {pessoa.ObterNomePessoa()}");
                 foreach (Livros livro in pessoa.ObterLivrosEmprestados())
                 {
-                    Console.WriteLine($"Livro: {livro.ObterNomeLivro()} Autor: {livro.ObterAutorLivro()}");
+                    Console.WriteLine($"L\nivro: {livro.ObterNomeLivro()} Autor: {livro.ObterAutorLivro()}");
                 }
             }
         }
         else
         {
-            Console.WriteLine("Não há livros cadastradas");
+            Console.WriteLine("\nNão há livros cadastradas");
         }
 
     }
